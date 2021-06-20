@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <!-- 可以在每次执行数据访问时在控制台看到SQL和参数信息 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- 配置全局的自动映射 -->
+        <setting name="autoMappingBehavior" value="FULL"></setting>
+        <!-- 自动将列名中的下划线匹配成驼峰式的属性，如：last_access_date -> lastAccessDate -->
+        <setting name="mapUnderscoreToCamelCase" value="true"></setting>
+    </settings>
+
+    <!-- 给类起别名 -->
+    <typeAliases>
+        <package name="com.chinasofti.bean"></package>
+    </typeAliases>
+
+    <!-- pagehelper拦截器 -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor" >
+
+        </plugin>
+    </plugins>
+
+
+
+</configuration>
